@@ -1,26 +1,127 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #111827;
 }
+/* page.module.css or globals.css */
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a;
+  font-family: system-ui, sans-serif;
+  padding: 2rem;
+}
+
+h1 {
+  color: #f8fafc;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+input[type="url"] {
+  padding: 0.75rem 1rem;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: #1e293b;
+  color: #f8fafc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="url"]:focus {
+  border-color: #6366f1;
+}
+
+input[type="url"]::placeholder {
+  color: #64748b;
+}
+
+button[type="submit"] {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #6366f1;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background: #4f46e5;
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+p {
+  color: #f8fafc;
+  font-size: 0.95rem;
+}
+
+/* error */
+form p {
+  color: #f87171;
+  font-size: 0.875rem;
+}
+
+/* result section */
+form > div {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+form > div a {
+  color: #60a5fa;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+form > div a:hover {
+  text-decoration: underline;
+}
+
+form > div button {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  background: transparent;
+  color: #f8fafc;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form > div button:hover {
+  background: #334155;
+}   
